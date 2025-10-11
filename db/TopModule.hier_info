@@ -1,0 +1,104 @@
+|TopModule
+CLK1 => ~NO_FANOUT~
+CLK2 => ~NO_FANOUT~
+HEX0[0] << <VCC>
+HEX0[1] << <VCC>
+HEX0[2] << <VCC>
+HEX0[3] << <VCC>
+HEX0[4] << <VCC>
+HEX0[5] << <VCC>
+HEX0[6] << <VCC>
+HEX0[7] << <VCC>
+HEX1[0] << <VCC>
+HEX1[1] << <VCC>
+HEX1[2] << <VCC>
+HEX1[3] << <VCC>
+HEX1[4] << <VCC>
+HEX1[5] << <VCC>
+HEX1[6] << <VCC>
+HEX1[7] << <VCC>
+HEX2[0] << <VCC>
+HEX2[1] << <VCC>
+HEX2[2] << <VCC>
+HEX2[3] << <VCC>
+HEX2[4] << <VCC>
+HEX2[5] << <VCC>
+HEX2[6] << <VCC>
+HEX2[7] << <VCC>
+HEX3[0] << <VCC>
+HEX3[1] << <VCC>
+HEX3[2] << <VCC>
+HEX3[3] << <VCC>
+HEX3[4] << <VCC>
+HEX3[5] << <VCC>
+HEX3[6] << <VCC>
+HEX3[7] << <VCC>
+HEX4[0] << <VCC>
+HEX4[1] << <VCC>
+HEX4[2] << <VCC>
+HEX4[3] << <VCC>
+HEX4[4] << <VCC>
+HEX4[5] << <VCC>
+HEX4[6] << <VCC>
+HEX4[7] << <VCC>
+HEX5[0] << <VCC>
+HEX5[1] << <VCC>
+HEX5[2] << <VCC>
+HEX5[3] << <VCC>
+HEX5[4] << <VCC>
+HEX5[5] << <VCC>
+HEX5[6] << <VCC>
+HEX5[7] << <VCC>
+BTN[0] => ~NO_FANOUT~
+BTN[1] => ~NO_FANOUT~
+LED[0] << m_and:u1.port2
+LED[1] << m_or:u2.port2
+LED[2] << m_not:u3.port1
+LED[3] << m_xor:u4.port2
+LED[4] << m_nand:u5.port2
+LED[5] << <GND>
+LED[6] << <GND>
+LED[7] << <GND>
+LED[8] << <GND>
+LED[9] << <GND>
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => ~NO_FANOUT~
+
+
+|TopModule|m_and:u1
+in1 => out1.IN0
+in2 => out1.IN1
+out1 <= out1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopModule|m_or:u2
+in1 => out1.IN0
+in2 => out1.IN1
+out1 <= out1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopModule|m_not:u3
+in1 => out1.DATAIN
+out1 <= in1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopModule|m_xor:u4
+in1 => out1.IN0
+in2 => out1.IN1
+out1 <= out1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopModule|m_nand:u5
+in1 => out1.IN0
+in2 => out1.IN1
+out1 <= out1.DB_MAX_OUTPUT_PORT_TYPE
+
+
